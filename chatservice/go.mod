@@ -14,6 +14,11 @@ require (
 )
 
 require (
+	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.3.0 // indirect
+	google.golang.org/protobuf v1.28.1 // indirect
+)
+
+require (
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/hashicorp/hcl v1.0.0 // indirect

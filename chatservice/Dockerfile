@@ -1,5 +1,4 @@
-#Versão Debian
-FROM golang:1.20.3-bullseye 
+FROM golang:1.20.3
 
 # Set environment variables
 ENV PATH="/root/.cargo/bin:${PATH}"
@@ -16,11 +15,10 @@ COPY go.mod go.sum ./
 RUN go mod download && go mod verify
 COPY . .
 
-#RUN cd /go/pkg/mod/github.com/j178/tiktoken-go@v0.2.1/tiktoken-cffi && \
-#    cargo build --release
+RUN cd /go/pkg/mod/github.com/j178/tiktoken-go@v0.2.1/tiktoken-cffi && \
+    cargo build --release
 
-#RUN apt update && apt install -y protobuf-compiler && apt install -y protoc-gen-go
-#RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
+RUN apt update && apt install -y protobuf-compiler && apt install -y protoc-gen-go
+RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
 
-#Manter o container rodando
-CMD ["tail", "-f", "/dev/null"]
+CMD [ "tail", "-f", "/dev/null" ]

@@ -2,6 +2,7 @@ syntax = "proto3";
 package pb;
 option go_package = "internal/infra/grpc/pb";
 
+// Contrato de comunicação entre o cliente e o servidor
 message ChatRequest {
     optional string chat_id = 1;
     string user_id = 2;
