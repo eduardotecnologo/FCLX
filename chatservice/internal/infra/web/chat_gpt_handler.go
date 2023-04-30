@@ -15,13 +15,18 @@ type WebChatGPTHandler struct {
 }
 
 // Constructor
-func NewWebChatGPTHandler(usecase chatcompletion.ChatCompletionUseCase, config chatcompletion.ChatCompletionConfigInputDTO, authToken string) *WebChatGPTHandler {
+func NewWebChatGPTHandler(usecase chatcompletion.ChatCompletionUseCase,
+	config chatcompletion.ChatCompletionConfigInputDTO,
+	authToken string) *WebChatGPTHandler {
+
 	return &WebChatGPTHandler{
 		CompletionUseCase: usecase,
 		Config:            config,
 		AuthToken:         authToken,
 	}
 }
+
+// Função padrão de webserver GO
 
 func (h *WebChatGPTHandler) Handle(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
@@ -46,6 +51,7 @@ func (h *WebChatGPTHandler) Handle(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var dto chatcompletion.ChatCompletionInputDTO
+	// body -> dto
 	err = json.Unmarshal(body, &dto)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)

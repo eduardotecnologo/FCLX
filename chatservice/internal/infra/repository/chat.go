@@ -89,7 +89,7 @@ func (r *ChatRepositoryMySQL) FindChatByID(ctx context.Context, chatID string) (
 		PresencePenalty:  float32(res.PresencePenalty),
 		FrequencyPenalty: float32(res.FrequencyPenalty),
 	}
-
+	// Buscando as msg do chatById
 	messages, err := r.Queries.FindMessagesByChatID(ctx, chatID)
 	if err != nil {
 		return nil, err
