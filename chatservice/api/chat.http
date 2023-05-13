@@ -12,9 +12,9 @@ POST http://localhost:8081/chat HTTP/1.1
 Content-Type: application/json 
 Authorization: 123456
 
-{   "chat_id": "479ab854-e486-4bda-990c-4e1577dab1bc",
+{   "chat_id": "7d36175f-3ac7-4cc0-bb16-4ab1a6b6829f",
     "user_id":"1",
-    "user_message": "Eu quero saber mais sobre arquitetura de software"
+    "user_message": "O que é arquitetura de software"
 }
 
 ###
